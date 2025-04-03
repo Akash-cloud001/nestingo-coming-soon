@@ -4,105 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nestingo - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
         body {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(34, 193, 195, 0.8)), url('https://source.unsplash.com/1600x900/?home,peace') no-repeat center center/cover;
-            height: 100vh;
+            font-family: "Urbanist", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            flex-direction: column;
             text-align: center;
-            color: #fff;
+            background: url('https://img1.wsimg.com/isteam/ip/5c158d71-a84f-4738-a3ac-8ae9b4fc768f/gradient-top-A-0002.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1023,m') no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: #000;
         }
-        .container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 30px;
-            border-radius: 10px;
+        .heading{
+            font-size: 72px;
+            font-weight: 500;
+            padding-top: 1rem;
+            padding-bottom: 8px;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .sub-heading{
+            font-size: 32px;
+            font-weight: 400;
         }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        .button {
+            margin-top: 32px;
+            padding: 10px 20px;
+            border: 0.75px solid black;
+            border-radius: 4px;
+            background: transparent;
+            font-size: 1rem;
+            cursor: pointer;
+            color: black;
         }
-        .countdown {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
+        .subscribe {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        @media screen and (min-width:640px) {
+            .subscribe{
+                flex-direction: row;
+                align-items: center;
+
+            }
         }
         input {
             padding: 10px;
-            width: 80%;
-            max-width: 300px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            width: 250px;
+            border: 1px solid #aaa;
         }
         button {
-            padding: 10px 20px;
+            padding: 10px 15px;
+            background: black;
+            color: white;
             border: none;
-            background: #ff9800;
-            color: #fff;
-            font-size: 1rem;
             cursor: pointer;
-            border-radius: 5px;
         }
-        .social {
-            margin-top: 20px;
-        }
-        .social a {
-            color: #ff9800;
-            margin: 0 10px;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            p { font-size: 1rem; }
-            .countdown { font-size: 1.2rem; }
+        h2{
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Nestingo</h1>
-        <p>The Nest where peace rests</p>
-        <div class="countdown" id="countdown">Launching Soon...</div>
-        <input type="email" placeholder="Enter your email for updates">
-        <button>Notify Me</button>
-        <div class="social">
-            <a href="#">&#xf099;</a>
-            <a href="#">&#xf09a;</a>
-            <a href="#">&#xf16d;</a>
-        </div>
+    <h2 >Great Deals Coming Soon</h2>
+    <h1 class="heading">
+        Nestingo
+    </h1>
+    <p class="sub-heading">A Nest where Peace rests.</p>
+    <button class="button">Learn More →</button>
+    <div class="subscribe">
+        <label>Subscribe</label>
+        <input type="email" placeholder="Email">
+        <button>Sign Up</button>
     </div>
-
-    <script>
-        function updateCountdown() {
-            const launchDate = new Date("May 1, 2025 00:00:00").getTime();
-            const now = new Date().getTime();
-            const timeLeft = launchDate - now;
-            
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
-            document.getElementById("countdown").innerHTML = `Launching in ${days}d ${hours}h ${minutes}m ${seconds}s`;
-            
-            if (timeLeft < 0) {
-                document.getElementById("countdown").innerHTML = "We are live now!";
-            }
-        }
-        setInterval(updateCountdown, 1000);
-    </script>
 </body>
 </html>
